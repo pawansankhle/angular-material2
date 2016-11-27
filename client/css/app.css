@@ -1,0 +1,18 @@
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+@import '/node_modules/@angular/material/core/theming/prebuilt/indigo-pink.css';
+
+md-sidenav-layout {
+    height: 100vh;
+}
+
+md-sidenav {
+    width: 320px;
+}
+
+md-toolbar-row {
+  justify-content: space-between;
+}
+
+.selected{
+  color: blue;
+}

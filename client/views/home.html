@@ -1,0 +1,29 @@
+
+<div>
+  <md-toolbar color="primary">
+    <span> <md-icon>pets</md-icon>Pets</span>
+    <button md-icon-button [md-menu-trigger-for]="menu">
+              <md-icon>more_vert</md-icon>
+    </button>
+    <md-menu x-position="after" #menu="mdMenu">
+          <button md-menu-item>Login</button>
+          
+        </md-menu>
+  </md-toolbar>
+  <md-sidenav-layout>
+     <md-sidenav align="start" mode="side" opened #sidenav>
+        <md-toolbar>
+           <span>sidenav</span>
+           <button md-raised-button (click)="sidenav.close()" color="accent"></button>
+        </md-toolbar>
+        <md-list>
+          <md-list-item *ngFor="let user of users">
+            <h3 [routerLink]="['/detail', user.id]" [class.selected]="user === selectedUser"  md-line (click)="selectUser(user)"> {{user.name}} </h3>
+          </md-list-item>
+          
+        </md-list>
+    </md-sidenav>
+    <router-outlet></router-outlet>
+  </md-sidenav-layout>
+  
+</div>
